@@ -45,14 +45,14 @@ function compress(req, res, input) {
   }else{
 
       sharp(input)
-    .grayscale(req.params.grayscale)
-    .toFormat(format, {
-      quality: req.params.quality,
-      progressive: true,
-      optimizeScans: true
-    })
-    .toBuffer((err, output, info) => {
-      if (err || !info || res.headersSent) return redirect(req, res)
+        .grayscale(req.params.grayscale)
+        .toFormat(format, {
+          quality: req.params.quality,
+          progressive: true,
+          optimizeScans: true
+        })
+        .toBuffer((err, output, info) => {
+          if (err || !info || res.headersSent) return redirect(req, res)
 
 
                 setResponseHeaders(info, format)
