@@ -12,7 +12,7 @@ function compress(req, res, input) {
   const originType = req.params.originType
   
   if(!req.params.grayscale && format === 'webp' && originType.endsWith('gif') && isAnimated(input)){
-    let {hostname, pathname} = new URL(req.params.url)
+    let {hostname, pathname} = (new URL(req.params.url))
     
     let path = `${os.tmpdir()}/${hostname + encodeURIComponent(pathname)}`;
     fs.writeFile(path + '.gif', input, (err) => {
