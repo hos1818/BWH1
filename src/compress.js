@@ -5,7 +5,6 @@ const {execFile} = require('child_process')
 const gif2webp = require('gif2webp-bin')
 const fs = require('fs')
 const os = require('os')
-const {URL} = require('url')
 
 function compress(req, res, input) {
   const format = req.params.webp ? 'webp' : 'jpeg'
