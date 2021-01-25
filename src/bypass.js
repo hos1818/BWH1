@@ -1,4 +1,4 @@
-const {URL} = require('url')
+
 
 function bypass(req, res, buffer) {
   res.setHeader('x-proxy-bypass', 1)
